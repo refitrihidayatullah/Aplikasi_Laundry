@@ -8,15 +8,19 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   display: flex;
 }
+/* sidebar first */
 .sidebar {
   position: sticky;
   top: 0;
   left: 0;
   bottom: 0;
-  width: 110px;
+  width: 140px;
   height: 100vh;
   overflow: hidden;
   transition: all 0.5s linear;
@@ -24,12 +28,23 @@ body {
   background: rgba(113, 99, 186, 255);
 }
 .sidebar:hover {
-  width: 240px;
+  width: 370px;
   transition: 0.5s ease-in-out;
 }
 .logo {
   height: 80px;
   padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.logo img {
+  width: 80px;
+}
+.logo span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: greenyellow;
 }
 .menu {
   height: 88%;
@@ -46,6 +61,8 @@ body {
 .menu li:hover,
 .active {
   background: #e0e0e058;
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
 }
 .menu a {
   display: flex;
@@ -61,3 +78,44 @@ body {
 .menu a span {
   overflow: hidden;
 }
+.menu .logout {
+  position: absolute;
+  bottom: 0;
+  width: 85%;
+}
+.menu .logout a {
+  gap: 2.8rem;
+}
+.menu .logout a span {
+  overflow: hidden;
+}
+/* sidebar end */
+
+/* main body first */
+.main__content {
+  position: relative;
+  padding: 1rem;
+  background: #ebe9e9;
+  width: 100%;
+}
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header__info {
+  display: flex;
+  gap: 1.2rem;
+}
+.header__info img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.header__info h6 {
+  align-self: center;
+}
+
+/* main body end */
